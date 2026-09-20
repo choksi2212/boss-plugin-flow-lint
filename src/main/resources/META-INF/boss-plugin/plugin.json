@@ -1,0 +1,25 @@
+{
+  "manifestVersion": 1,
+  "pluginId": "ai.rever.boss.plugin.dynamic.flowlint",
+  "displayName": "Flow Lint (Dynamic)",
+  "version": "0.1.0",
+  "apiVersion": "1.0.93",
+  "minApiVersion": "1.0.93",
+  "minBossVersion": "9.5.0",
+  "mainClass": "ai.rever.boss.plugin.dynamic.flowlint.FlowLintDynamicPlugin",
+  "type": "mixed",
+  "description": "Pre-run validator for flow-tab graphs - finds unreachable nodes, missing TRIGGERs, missing browser ancestors, empty selectors, HTTP URL mistakes, and 6 other rules before a flow runs",
+  "author": "Risa Labs",
+  "url": "https://github.com/choksi2212/boss-plugin-flow-lint",
+  "panel": {
+    "position": "left_bottom",
+    "priority": 62
+  },
+  "sandbox": {
+    "maxThreads": 4,
+    "maxRestartAttempts": 3,
+    "heartbeatIntervalMs": 5000
+  },
+  "isolationMode": "out-of-process",
+  "fallback": "in-process"
+}
