@@ -12,7 +12,7 @@ group = "ai.rever.boss.plugin.dynamic"
 // nodes, missing TRIGGERs, missing browser ancestors, empty selectors, HTTP
 // URL mistakes, undefined variables, unresolved secrets, unknown node types,
 // and several other shapes that should not run.
-version = "0.1.0"
+version = "0.1.1"
 
 // Auto-detect CI environment: CI=true uses the downloaded jar under build/downloaded-deps.
 val useLocalDependencies = System.getenv("CI") != "true"
