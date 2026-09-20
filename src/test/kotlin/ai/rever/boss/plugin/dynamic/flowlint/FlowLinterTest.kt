@@ -392,4 +392,34 @@ class FlowLinterTest {
         )
         assertEquals(expected, ids)
     }
+
+    @Test
+    fun `lint a healthy graph returns zero issues`() {
+        // A small but correct graph: trigger -> open browser -> navigate ->
+        // click. Each rule should stay quiet; only sanity that the whole
+        // pipeline (parse + every rule) returns empty on a clean input.
+        val graph = Graph(
+            nodes = listOf(
+                node("t", NodeType.TRIGGER),
+                node("o", NodeType.OPEN_BROWSER),
+                node(
+                    "n",
+                    NodeType.NAVIGATE,
+                    config = stringConfig("url", "https://example.com"),
+                ),
+                node(
+                    "c",
+                    NodeType.CLICK,
+                    config = stringConfig("selector", "#submit"),
+                ),
+            ),
+            edges = listOf(
+                GraphEdge("t", "o"),
+                GraphEdge("o", "n"),
+                GraphEdge("n", "c"),
+            ),
+        )
+        val issues = linter().lint(graph).issues
+        assertTrue(issues.isEmpty(), "expected clean graph, got $issues")
+    }
 }
