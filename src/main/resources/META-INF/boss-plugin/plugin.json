@@ -9,7 +9,7 @@
   "mainClass": "ai.rever.boss.plugin.dynamic.flowlint.FlowLintDynamicPlugin",
   "type": "mixed",
   "description": "Pre-run validator for flow-tab graphs - finds unreachable nodes, missing TRIGGERs, missing browser ancestors, empty selectors, HTTP URL mistakes, and 6 other rules before a flow runs",
-  "author": "Risa Labs",
+  "author": "choksi2212",
   "url": "https://github.com/choksi2212/boss-plugin-flow-lint",
   "panel": {
     "position": "left_bottom",
